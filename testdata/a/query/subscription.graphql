@@ -1,0 +1,65 @@
+subscription CreatedA1 {
+    createdA { # OK
+	id
+	name
+    }
+}
+
+subscription CreatedA2 {
+    createdA { # want "type A has id field but selection createdA does not have id field"
+        name
+    }
+}
+
+subscription CreatedA3() {
+    createdA { # OK
+        ...AFragment1
+    }
+}
+
+subscription CreatedA4() {
+    createdA { # OK
+        id
+        ...AFragment1
+    }
+}
+
+subscription CreatedA5() {
+    createdA { # want "type A has id field but selection createdA does not have id field"
+        name
+        ...AFragment1
+    }
+}
+
+subscription CreatedA6() {
+    createdA {
+        ... on A { # want "type A has id field but fragment does not have id field"
+            name
+            ...AFragment1
+        }
+    }
+}
+
+subscription CreatedA7() {
+    createdA {
+        ... on A { # OK
+            ...AFragment1
+        }
+    }
+}
+
+subscription CreatedA8() {
+    createdA {
+        ... on A { # OK
+            ... on A { # OK
+                ...AFragment1
+            }
+        }
+    }
+}
+
+subscription CreatedA9() {
+    createdA { # OK
+        ...AFragment2
+    }
+}

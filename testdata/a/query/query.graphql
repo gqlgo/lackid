@@ -1,0 +1,80 @@
+query A1() {
+    a {
+        id # OK
+	name
+    }
+}
+
+query A2() {
+    a { # want "type A has id field but selection a does not have id field"
+	name
+    }
+}
+ 
+fragment AFragment1 on A { # want "type A has id field but AFragment1 does not have id field"
+	name
+}
+
+query A3() {
+    a { # OK
+	...AFragment1
+    }
+}
+
+query A4() {
+    a { # OK
+	id
+	...AFragment1
+    }
+}
+
+query A5() {
+    a { # want "type A has id field but selection a does not have id field"
+	name
+	...AFragment1
+    }
+}
+
+query A6() {
+    a {
+	... on A { # want "type A has id field but fragment does not have id field"
+		name
+		...AFragment1
+	}
+    }
+}
+
+query A7() {
+    a {
+	... on A { # OK
+		...AFragment1
+	}
+    }
+}
+
+query A8() {
+    a {
+	... on A { # OK
+		... on A { # OK
+			...AFragment1
+		}
+	}
+    }
+}
+
+fragment AFragment2 on A { # OK
+	id
+	name
+}
+
+query A9() {
+    a { # OK
+	...AFragment2
+    }
+}
+
+query B1() {
+    b { # OK: B does not have id
+	name
+    }
+}

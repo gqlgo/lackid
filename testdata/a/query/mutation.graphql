@@ -1,0 +1,83 @@
+mutation CreateA1($input: CreateAInput!) {
+    createA(input: $input) {
+        a { # OK
+	    id
+	    name
+        }
+    }
+}
+
+mutation CreateA2($input: CreateAInput!) {
+    createA(input: $input) {
+        a { # want "type A has id field but selection a does not have id field"
+	    name
+        }
+    }
+}
+
+mutation CreateA3() {
+    createA(input: $input) {
+        a { # OK
+            ...AFragment1
+        }
+    }
+}
+
+mutation CreateA4() {
+    createA(input: $input) {
+        a { # OK
+            id
+            ...AFragment1
+        }
+    }
+}
+
+mutation CreateA5() {
+    createA(input: $input) {
+        a { # want "type A has id field but selection a does not have id field"
+            name
+            ...AFragment1
+        }
+    }
+}
+
+mutation CreateA6() {
+    createA(input: $input) {
+        a {
+            ... on A { # want "type A has id field but fragment does not have id field"
+            	name
+            	...AFragment1
+            }
+        }
+    }
+}
+
+mutation CreateA7() {
+    createA(input: $input) {
+        a {
+            ... on A { # OK
+            	...AFragment1
+            }
+        }
+    }
+}
+
+mutation CreateA8() {
+    createA(input: $input) {
+        a {
+            ... on A { # OK
+            	... on A { # OK
+            		...AFragment1
+            	}
+            }
+        }
+    }
+}
+
+mutation CreateA9() {
+    createA(input: $input) {
+        a { # OK
+            ...AFragment2
+        }
+    }
+}
