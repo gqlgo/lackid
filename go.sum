@@ -25,8 +25,8 @@ github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/
 github.com/gorilla/context v0.0.0-20160226214623-1ea25387ff6f/go.mod h1:kBGZzfjB9CEq2AlWe17Uuf7NDRt0dE0s8S51q0aT7Yg=
 github.com/gorilla/mux v1.6.1/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
 github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
-github.com/gqlgo/gqlanalysis v0.1.0 h1:pXearPlTGkk4ILTT1zMF9y3DrHwmLKT6p5c9dFO5DBc=
-github.com/gqlgo/gqlanalysis v0.1.0/go.mod h1:BFhVkoQezTAcK1G9e1Yety8DVKjV4Ai5reZchzq7Jl4=
+github.com/gqlgo/gqlanalysis v0.2.0 h1:vopdtfiuQBN/koS7RqfwK0s99mEfsEL6Z1maQTNFhAs=
+github.com/gqlgo/gqlanalysis v0.2.0/go.mod h1:BFhVkoQezTAcK1G9e1Yety8DVKjV4Ai5reZchzq7Jl4=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/josharian/txtarfs v0.0.0-20210218200122-0702f000015a h1:8NZHLa6Gp0hW6xJ0c3F1Kse7dJw30fOcDzHuF9sLbnE=
 github.com/josharian/txtarfs v0.0.0-20210218200122-0702f000015a/go.mod h1:izVPOvVRsHiKkeGCT6tYBNWyDVuzj9wAaBb5R9qamfw=
