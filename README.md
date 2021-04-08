@@ -56,6 +56,10 @@ The default value of `schema` is "schema/*/**.graphql" and `query` is `query/*/*
 $ lackid -schema="https://example.com" -query="client/**/*.graphql"
 ```
 
+## Author
+
+[![Appify Technologies, Inc.](appify-logo.png)](http://github.com/appify-technologies)
+
 <!-- links -->
 [gopkg]: https://pkg.go.dev/github.com/gqlgo/lackid
 [gopkg-badge]: https://pkg.go.dev/badge/github.com/gqlgo/lackid?status.svg
