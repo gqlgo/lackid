@@ -1,8 +1,14 @@
 module github.com/gqlgo/lackid
 
+go 1.19
+
 require (
-	github.com/gqlgo/gqlanalysis v0.2.1
-	github.com/vektah/gqlparser/v2 v2.1.0
+	github.com/gqlgo/gqlanalysis v0.3.4
+	github.com/vektah/gqlparser/v2 v2.5.1
 )
 
-go 1.16
+require (
+	github.com/Yamashou/gqlgenc v0.11.1 // indirect
+	github.com/agnivade/levenshtein v1.1.1 // indirect
+	github.com/mattn/go-zglob v0.0.3 // indirect
+)
